@@ -56,7 +56,7 @@ if(file_exists($sinfo)) {
 <?php
 $raw_files = scandir ('.');
 usort($raw_files, function($a, $b) {
-    return filemtime($a) < filemtime($b);
+    return filemtime($a) <=> filemtime($b);
 });
 
 foreach ($raw_files as &$raw_file) {
